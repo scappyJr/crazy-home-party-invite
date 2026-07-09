@@ -159,42 +159,113 @@
     font-size: 0.9rem;
     margin: 0;
   }
+
+  /* entrance animation */
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(24px) scale(0.85); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .reveal { opacity: 0; }
+  .reveal.show {
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: calc(var(--d, 0) * 0.08s);
+  }
+
+  /* title accent effects */
+  .title {
+    animation: titleSway 4.5s ease-in-out infinite;
+    transform-origin: 50% 0%;
+  }
+  @keyframes titleSway {
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+  }
+
+  .crazy { background-size: 250% 100%; }
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+  .crazy.show {
+    animation:
+      popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+      shimmer 3.2s linear infinite;
+    animation-delay: calc(var(--d, 0) * 0.08s), 0s;
+  }
+
+  @keyframes neonFlicker {
+    0%, 100%, 41%, 43%, 74%, 76% { opacity: 1; }
+    42%, 75% { opacity: 0.6; }
+  }
+  .neon.show {
+    animation:
+      popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+      neonFlicker 5s ease-in-out infinite;
+    animation-delay: calc(var(--d, 0) * 0.08s), 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .title, .crazy, .neon {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 </style>
+<noscript><style>.reveal { opacity: 1; }</style></noscript>
 </head>
 <body>
   <div class="card">
-    <div class="topbar">
+    <div class="topbar reveal" style="--d:0">
       <span>26' JULY 25TH</span>
       <span>GAWON'S</span>
     </div>
 
     <h1 class="title">
-      <span class="line crazy">CRAZY</span>
-      <span class="line neon">HOME</span>
-      <span class="line neon">PARTY</span>
+      <span class="line crazy reveal" style="--d:1">CRAZY</span>
+      <span class="line neon reveal" style="--d:2">HOME</span>
+      <span class="line neon reveal" style="--d:3">PARTY</span>
     </h1>
 
-    <p class="subtitle">JULY 25TH<span class="sep">l</span>SAT 4PM</p>
+    <p class="subtitle reveal" style="--d:4">JULY 25TH<span class="sep">l</span>SAT 4PM</p>
 
-    <p class="phrase">
+    <p class="phrase reveal" style="--d:5">
       <span class="l1">신나게 즐겨봐 인생은 멋진거야</span><br>
       <span class="l2">기억해 넌 정말 최고의 파티QUEEN</span>
     </p>
 
-    <p class="body-text">
+    <p class="body-text reveal" style="--d:6">
       뜨거운 여름날, 가원'S 홈파티에 여러분들을 초대합니다.<br>
       집들이겸 안부인사겸<br>
       얼굴 한번 보고 신나게 놀아보자욧!!!!<br>
       편한 옷과 가벼운 발걸음, 설레는 마음으로 찾아오세요! <span class="grad-text">&gt;&lt;</span>
     </p>
 
-    <img class="collage" src="assets/collage.jpg" alt="홈파티 사진 콜라주">
+    <img class="collage reveal" style="--d:7" src="assets/collage.jpg" alt="홈파티 사진 콜라주">
 
-    <p class="address">홈파티 주소: 서울시 강북구 오패산로 77길, <span style="white-space:nowrap">33-7.</span> 초록대문집</p>
+    <p class="address reveal" style="--d:8">홈파티 주소: 서울시 강북구 오패산로 77길, <span style="white-space:nowrap">33-7.</span> 초록대문집</p>
 
-    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%8C%A8%EC%82%B0%EB%A1%9C77%EA%B8%B8%2033-7" target="_blank" rel="noopener">📍 지도에서 보기</a>
+    <a class="map-btn reveal" style="--d:9" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%8C%A8%EC%82%B0%EB%A1%9C77%EA%B8%B8%2033-7" target="_blank" rel="noopener">📍 지도에서 보기</a>
 
-    <p class="ps">PS: 술과 음료, 또는 그 어떠한 찬조 선물도 굉장히 열렬히 환영💕</p>
+    <p class="ps reveal" style="--d:10">PS: 술과 음료, 또는 그 어떠한 찬조 선물도 굉장히 열렬히 환영💕</p>
   </div>
+  <script>
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('show'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GAWON'S CRAZY HOME PARTY 초대장</title>
+<meta property="og:title" content="CRAZY HOME PARTY 초대장">
+<meta property="og:description" content="7월 25일 토요일 4시, 가원'S 홈파티에 초대합니다!">
+<style>
+  :root {
+    --bg: #ece3fe;
+    --dark: #4b4756;
+    --purple: #8558d3;
+    --magenta: #b93fa0;
+    --neon: #eafa8a;
+    --neon-dark: #cddb5a;
+    --pink: #e066a8;
+    --body-text: #262330;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #cfc4ea;
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg);
+    padding: 34px 26px 50px;
+    position: relative;
+    overflow: hidden;
+    word-break: keep-all;
+  }
+  @media (min-width: 481px) {
+    body { padding: 24px 0; }
+    .card { box-shadow: 0 10px 40px rgba(0,0,0,0.25); border-radius: 12px; }
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+
+  .title {
+    margin: 0;
+    text-align: center;
+    font-family: Impact, 'Arial Narrow Bold', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: 1px;
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+  .title .line { display: block; }
+  .crazy {
+    background: linear-gradient(100deg, #8fe0f0 0%, #7f8fef 28%, #a24fd4 52%, #d92a72 74%, #4c1f8c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(2px 4px 1px rgba(90,70,130,0.35));
+    padding-bottom: 6px;
+  }
+  .neon {
+    color: var(--neon);
+    text-shadow:
+      2px 3px 0 rgba(130,130,90,0.45),
+      -1px -1px 0 rgba(255,255,255,0.5);
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin: 14px 0 22px;
+    letter-spacing: 0.5px;
+  }
+  .subtitle .sep { margin: 0 10px; font-weight: 400; }
+
+  .phrase {
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin: 0 0 22px;
+  }
+  .phrase .l1 { color: var(--purple); }
+  .phrase .l2 { color: var(--magenta); }
+
+  .body-text {
+    text-align: center;
+    color: var(--body-text);
+    font-weight: 600;
+    line-height: 1.9;
+    font-size: 1.05rem;
+    margin: 0 0 26px;
+  }
+
+  .collage {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    margin-bottom: 28px;
+  }
+
+  .address {
+    text-align: center;
+    color: var(--neon-dark);
+    font-weight: 800;
+    font-size: 1.02rem;
+    text-shadow: 1px 1px 0 rgba(75,71,86,0.15);
+    margin: 0 0 16px;
+    line-height: 1.5;
+  }
+
+  .map-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 26px;
+    background: var(--purple);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(133,88,211,0.4);
+    transition: transform 0.15s ease;
+  }
+  .map-btn:active { transform: scale(0.96); }
+
+  .ps {
+    text-align: center;
+    color: var(--pink);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="topbar">
+      <span>26' JULY 25TH</span>
+      <span>GAWON'S</span>
+    </div>
+
+    <h1 class="title">
+      <span class="line crazy">CRAZY</span>
+      <span class="line neon">HOME</span>
+      <span class="line neon">PARTY</span>
+    </h1>
+
+    <p class="subtitle">JULY 25TH<span class="sep">l</span>SAT 4PM</p>
+
+    <p class="phrase">
+      <span class="l1">신나게 즐겨봐 인생은 멋진거야</span><br>
+      <span class="l2">기억해 넌 정말 최고의 파티QUEEN</span>
+    </p>
+
+    <p class="body-text">
+      뜨거운 여름날, 가원'S 홈파티에 여러분들을 초대합니다.<br>
+      집들이겸 안부인사겸<br>
+      얼굴 한번 보고 신나게 놀아보자욧!!!!<br>
+      편한 옷과 가벼운 발걸음, 설레는 마음으로 찾아오세요! &gt;&lt;
+    </p>
+
+    <img class="collage" src="assets/collage.jpg" alt="홈파티 사진 콜라주">
+
+    <p class="address">홈파티 주소: 서울시 강북구 오패산로 77길, 33-7. 초록대문집</p>
+
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%8C%A8%EC%82%B0%EB%A1%9C77%EA%B8%B8%2033-7" target="_blank" rel="noopener">📍 지도에서 보기</a>
+
+    <p class="ps">PS: 술과 음료, 또는 그 어떠한 찬조 선물도 굉장히 열렬히 환영💕</p>
+  </div>
+</body>
+</html>

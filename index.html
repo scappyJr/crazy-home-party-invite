@@ -6,15 +6,15 @@
 <title>GAWON'S CRAZY HOME PARTY 초대장</title>
 <meta property="og:title" content="CRAZY HOME PARTY 초대장">
 <meta property="og:description" content="7월 25일 토요일 4시, 가원'S 홈파티에 초대합니다!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ece3fe;
     --dark: #4b4756;
     --purple: #8558d3;
-    --magenta: #b93fa0;
     --neon: #eafa8a;
-    --neon-dark: #cddb5a;
-    --pink: #e066a8;
     --body-text: #262330;
   }
   * { box-sizing: border-box; }
@@ -63,14 +63,15 @@
     font-size: clamp(3rem, 15vw, 4.6rem);
   }
   .title .line { display: block; }
-  .crazy {
+  .crazy, .grad-text {
     background: linear-gradient(100deg, #8fe0f0 0%, #7f8fef 28%, #a24fd4 52%, #d92a72 74%, #4c1f8c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     filter: drop-shadow(2px 4px 1px rgba(90,70,130,0.35));
-    padding-bottom: 6px;
   }
+  .crazy { padding-bottom: 6px; }
+  .grad-text { font-weight: 800; }
   .neon {
     color: var(--neon);
     text-shadow:
@@ -90,13 +91,19 @@
 
   .phrase {
     text-align: center;
-    font-weight: 800;
-    line-height: 1.7;
-    font-size: 1.05rem;
+    font-family: 'Gaegu', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    line-height: 1.9;
+    font-size: 1.5rem;
     margin: 0 0 22px;
   }
-  .phrase .l1 { color: var(--purple); }
-  .phrase .l2 { color: var(--magenta); }
+  .phrase .l1, .phrase .l2 {
+    background: linear-gradient(100deg, #8679a5 0%, #7b4fc9 45%, #c13fa0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(1px 2px 0 #3d185b);
+  }
 
   .body-text {
     text-align: center;
@@ -117,10 +124,12 @@
 
   .address {
     text-align: center;
-    color: var(--neon-dark);
+    color: var(--neon);
     font-weight: 800;
     font-size: 1.02rem;
-    text-shadow: 1px 1px 0 rgba(75,71,86,0.15);
+    text-shadow:
+      1px 1px 0 rgba(20,20,10,0.75),
+      2px 2px 3px rgba(20,20,10,0.55);
     margin: 0 0 16px;
     line-height: 1.5;
   }
@@ -143,7 +152,7 @@
 
   .ps {
     text-align: center;
-    color: var(--pink);
+    color: var(--body-text);
     font-weight: 600;
     font-size: 0.9rem;
     margin: 0;
@@ -174,7 +183,7 @@
       뜨거운 여름날, 가원'S 홈파티에 여러분들을 초대합니다.<br>
       집들이겸 안부인사겸<br>
       얼굴 한번 보고 신나게 놀아보자욧!!!!<br>
-      편한 옷과 가벼운 발걸음, 설레는 마음으로 찾아오세요! &gt;&lt;
+      편한 옷과 가벼운 발걸음, 설레는 마음으로 찾아오세요! <span class="grad-text">&gt;&lt;</span>
     </p>
 
     <img class="collage" src="assets/collage.jpg" alt="홈파티 사진 콜라주">

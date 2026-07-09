@@ -8,12 +8,11 @@
 <meta property="og:description" content="7월 25일 토요일 4시, 가원'S 홈파티에 초대합니다!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Bebas+Neue&family=Anton&family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ece3fe;
     --dark: #4b4756;
-    --purple: #8558d3;
     --neon: #eafa8a;
     --body-text: #262330;
   }
@@ -45,22 +44,23 @@
   .topbar {
     display: flex;
     justify-content: space-between;
-    font-weight: 700;
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
     letter-spacing: 0.5px;
     color: var(--dark);
-    font-size: 0.95rem;
+    font-size: 0.87rem;
     margin-bottom: 10px;
   }
 
   .title {
     margin: 0;
     text-align: center;
-    font-family: Impact, 'Arial Narrow Bold', 'Arial Black', sans-serif;
+    font-family: 'Anton', Impact, 'Arial Narrow Bold', 'Arial Black', sans-serif;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 400;
     line-height: 0.92;
     letter-spacing: 1px;
-    font-size: clamp(3rem, 15vw, 4.6rem);
+    font-size: clamp(3.3rem, 17.6vw, 5.3rem);
   }
   .title .line { display: block; }
   .crazy, .grad-text {
@@ -81,11 +81,12 @@
 
   .subtitle {
     text-align: center;
+    font-family: 'Bebas Neue', Impact, sans-serif;
     color: var(--dark);
-    font-weight: 700;
-    font-size: 1.35rem;
+    font-weight: 400;
+    font-size: 0.87rem;
     margin: 8px 0 14px;
-    letter-spacing: 0.5px;
+    letter-spacing: 3px;
   }
   .subtitle .sep { margin: 0 10px; font-weight: 400; }
 
@@ -94,8 +95,8 @@
     font-family: 'Gaegu', 'Malgun Gothic', sans-serif;
     font-weight: 700;
     line-height: 1.7;
-    font-size: 1.4rem;
-    letter-spacing: -1px;
+    font-size: 0.72rem;
+    letter-spacing: -0.5px;
     margin: 0 0 14px;
   }
   .phrase .l1, .phrase .l2 {
@@ -108,10 +109,11 @@
 
   .body-text {
     text-align: center;
+    font-family: 'Gothic A1', 'Malgun Gothic', sans-serif;
     color: var(--body-text);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.7;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     letter-spacing: -0.3px;
     margin: 0 0 16px;
   }
@@ -124,40 +126,49 @@
     margin-bottom: 16px;
   }
 
-  .address {
-    text-align: center;
-    color: var(--neon);
-    font-weight: 800;
-    font-size: 1.02rem;
-    text-shadow:
-      1px 1px 0 rgba(20,20,10,0.75),
-      2px 2px 3px rgba(20,20,10,0.55);
-    margin: 0 0 12px;
-    line-height: 1.5;
-  }
-
-  .map-btn {
-    display: block;
-    width: fit-content;
-    margin: 0 auto 16px;
-    background: var(--purple);
-    color: #fff;
+  .address-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 12px 24px;
-    border-radius: 999px;
-    box-shadow: 0 4px 14px rgba(133,88,211,0.4);
+    margin: 0 0 16px;
     transition: transform 0.15s ease;
   }
-  .map-btn:active { transform: scale(0.96); }
+  .address-row:active { transform: scale(0.96); }
+  .address-label {
+    font-family: 'Gothic A1', 'Malgun Gothic', sans-serif;
+    font-weight: 500;
+    font-size: 0.52rem;
+    color: var(--dark);
+  }
+  .arrow-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 26px;
+    background: var(--neon);
+    clip-path: polygon(0% 28%, 58% 28%, 58% 0%, 100% 50%, 58% 100%, 58% 72%, 0% 72%);
+    filter: drop-shadow(1px 2px 0 rgba(20,20,10,0.5));
+  }
+  .arrow-btn span {
+    font-family: 'Gaegu', 'Malgun Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 0.44rem;
+    color: rgba(75,71,86,0.9);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    margin-left: -12px;
+  }
 
   .ps {
     text-align: center;
+    font-family: 'Gothic A1', 'Malgun Gothic', sans-serif;
     color: var(--body-text);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin: 0;
+    font-weight: 500;
+    font-size: 0.58rem;
+    margin: 0 0 16px;
   }
 
   /* entrance animation */
@@ -243,11 +254,12 @@
 
     <img class="collage reveal" style="--d:7" src="assets/collage.jpg" alt="홈파티 사진 콜라주">
 
-    <p class="address reveal" style="--d:8">홈파티 주소: 서울시 강북구 오패산로 77길, <span style="white-space:nowrap">33-7.</span> 초록대문집</p>
+    <p class="ps reveal" style="--d:8">ps: 술과 음료, 또는 그 어떠한 찬조 선물도 굉장히 열렬히 환영💕</p>
 
-    <a class="map-btn reveal" style="--d:9" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%8C%A8%EC%82%B0%EB%A1%9C77%EA%B8%B8%2033-7" target="_blank" rel="noopener">📍 지도에서 보기</a>
-
-    <p class="ps reveal" style="--d:10">PS: 술과 음료, 또는 그 어떠한 찬조 선물도 굉장히 열렬히 환영💕</p>
+    <a class="address-row reveal" style="--d:9" href="https://www.google.com/maps/search/?api=1&query=%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%8C%A8%EC%82%B0%EB%A1%9C77%EA%B8%B8%2033-7" target="_blank" rel="noopener">
+      <span class="address-label">홈파티 주소 : 지도에서 보기</span>
+      <span class="arrow-btn"><span>클릭</span></span>
+    </a>
   </div>
   <script>
   (function () {
